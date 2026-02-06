@@ -35,7 +35,7 @@ const MainScroll = () => {
   return (
     <div className="flex flex-col gap-24 md:gap-32">
       <Element name="home" className="element">
-        <section id="home" className="min-h-screen flex items-center justify-center pt-20 md:pt-0">
+        <section id="home" className="min-h-screen flex items-center justify-center pt-2 md:pt-0">
           <Home />
         </section>
       </Element>

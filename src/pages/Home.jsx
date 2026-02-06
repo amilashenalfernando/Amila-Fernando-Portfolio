@@ -6,14 +6,14 @@ import { FiArrowRight, FiGithub, FiLinkedin, FiMail, FiInstagram, FiFacebook } f
 
 const Home = () => {
     return (
-        <div className="flex flex-col items-center justify-start md:justify-center min-h-[85vh] text-center w-full pt-16 md:pt-10">
+        <div className="flex flex-col items-center justify-start md:justify-center min-h-[85vh] text-center w-full pt-2 md:pt-10">
 
             {/* Introduction Card */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="glass-card pt-12 pb-8 px-6 md:p-14 max-w-5xl w-full mx-4 flex flex-col items-center relative overflow-hidden"
+                className="glass-card pt-6 pb-8 px-6 md:p-14 max-w-5xl w-full mx-4 flex flex-col items-center relative overflow-hidden"
             >
                 {/* Glow effect inside card (Updated colors) */}
                 <div className="absolute -top-24 -left-24 w-48 h-48 bg-orange-500/20 rounded-full blur-3xl pointer-events-none" />
