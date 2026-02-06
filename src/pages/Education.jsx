@@ -222,44 +222,44 @@ const Education = () => {
                                 animate={{ scale: 1, y: 0 }}
                                 exit={{ scale: 0.9, y: 50 }}
                                 onClick={(e) => e.stopPropagation()}
-                                className="bg-[#050505]/80 backdrop-blur-xl border border-white/10 rounded-2xl w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative z-10"
+                                className="bg-[#050505]/80 backdrop-blur-xl border border-white/10 rounded-2xl w-full max-w-7xl h-auto max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative z-10"
                             >
 
                                 {/* Modal Header */}
-                                <div className="p-6 border-b border-white/10 flex justify-between items-center bg-transparent sticky top-0 z-20">
+                                <div className="p-4 md:p-6 border-b border-white/10 flex justify-between items-center bg-transparent sticky top-0 z-20 shrink-0">
                                     <div>
-                                        <h3 className="text-2xl font-bold text-white">All Certifications</h3>
-                                        <p className="text-gray-400 text-sm">A collection of my professional achievements</p>
+                                        <h3 className="text-xl md:text-2xl font-bold text-white">All Certifications</h3>
+                                        <p className="text-gray-400 text-xs md:text-sm">A collection of my professional achievements</p>
                                     </div>
                                     <button
                                         onClick={() => setIsModalOpen(false)}
-                                        className="p-3 bg-white/5 hover:bg-white/20 rounded-full transition-colors"
+                                        className="p-2 md:p-3 bg-white/5 hover:bg-white/20 rounded-full transition-colors"
                                     >
-                                        <FiX className="text-xl text-white" />
+                                        <FiX className="text-lg md:text-xl text-white" />
                                     </button>
                                 </div>
 
                                 {/* Modal Content - Scrollable */}
-                                <div className="p-6 overflow-y-auto custom-scrollbar relative z-10">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div className="p-4 md:p-6 overflow-y-auto custom-scrollbar relative z-10 flex-1 min-h-0">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                                         {certifications.map((cert) => (
                                             <a
                                                 href={cert.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 key={cert.id}
-                                                className="group glass-card p-6 relative overflow-hidden hover:border-orange-500/50 transition-colors block bg-white/5"
+                                                className="group glass-card p-4 md:p-6 relative overflow-hidden hover:border-orange-500/50 transition-colors block bg-white/5"
                                             >
-                                                <div className="mb-6 h-40 rounded-lg overflow-hidden relative">
+                                                <div className="mb-4 md:mb-6 h-32 md:h-40 rounded-lg overflow-hidden relative">
                                                     <img src={cert.image} alt={cert.title} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110" />
                                                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                                        <FiExternalLink className="text-white text-3xl" />
+                                                        <FiExternalLink className="text-white text-2xl md:text-3xl" />
                                                     </div>
                                                 </div>
 
                                                 <div>
-                                                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-orange-400 transition-colors">{cert.title}</h3>
-                                                    <p className="text-gray-400 text-sm mb-4">{cert.issuer} • {cert.date}</p>
+                                                    <h3 className="text-base md:text-lg font-bold text-white mb-1 group-hover:text-orange-400 transition-colors">{cert.title}</h3>
+                                                    <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4">{cert.issuer} • {cert.date}</p>
                                                     <div className="flex flex-wrap gap-2">
                                                         {cert.skills.map((skill, idx) => (
                                                             <span key={idx} className="text-xs px-2 py-1 bg-black/30 rounded border border-white/10 text-gray-300">
