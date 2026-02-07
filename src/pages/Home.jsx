@@ -51,7 +51,7 @@ const Home = () => {
                 </h1>
 
                 {/* Roles / Clickable Links */}
-                <div className="mb-10 flex flex-wrap justify-center gap-2 md:gap-4 text-lg md:text-xl text-gray-300">
+                <div className="mb-10 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 text-lg md:text-xl text-gray-300">
                     <Link to="projects" smooth={true} duration={500} offset={-100} className="cursor-pointer hover:text-orange-400 transition-colors border-b border-transparent hover:border-orange-400">
                         Software Engineering Undergraduate
                     </Link>

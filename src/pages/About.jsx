@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { scroller } from 'react-scroll';
@@ -44,6 +44,7 @@ const skills = [
 
 const About = () => {
     const navigate = useNavigate();
+    const [activeTool, setActiveTool] = useState(null);
 
     return (
         <div className="w-full max-w-6xl mx-auto pt-10 px-4">
@@ -203,11 +204,15 @@ const About = () => {
                             transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
                         >
                             {[...tools, ...tools].map((tool, index) => (
-                                <div key={index} className="flex flex-col items-center gap-3 min-w-[80px] group cursor-default">
-                                    <div className="text-4xl md:text-5xl transition-transform duration-300 group-hover:scale-110 filter grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100">
+                                <div
+                                    key={index}
+                                    className="flex flex-col items-center gap-3 min-w-[80px] group cursor-default"
+                                    onClick={() => setActiveTool(activeTool === tool.name ? null : tool.name)}
+                                >
+                                    <div className={`text-4xl md:text-5xl transition-transform duration-300 filter ${activeTool === tool.name ? 'grayscale-0 opacity-100 scale-110' : 'grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100 group-hover:scale-110'}`}>
                                         {tool.icon}
                                     </div>
-                                    <span className="text-sm text-gray-500 group-hover:text-white transition-colors">
+                                    <span className={`text-sm transition-colors ${activeTool === tool.name ? 'text-white' : 'text-gray-500 group-hover:text-white'}`}>
                                         {tool.name}
                                     </span>
                                 </div>
@@ -221,11 +226,15 @@ const About = () => {
                             transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
                         >
                             {[...tools, ...tools].map((tool, index) => (
-                                <div key={`duplicate-${index}`} className="flex flex-col items-center gap-3 min-w-[80px] group cursor-default">
-                                    <div className="text-4xl md:text-5xl transition-transform duration-300 group-hover:scale-110 filter grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100">
+                                <div
+                                    key={`duplicate-${index}`}
+                                    className="flex flex-col items-center gap-3 min-w-[80px] group cursor-default"
+                                    onClick={() => setActiveTool(activeTool === tool.name ? null : tool.name)}
+                                >
+                                    <div className={`text-4xl md:text-5xl transition-transform duration-300 filter ${activeTool === tool.name ? 'grayscale-0 opacity-100 scale-110' : 'grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100 group-hover:scale-110'}`}>
                                         {tool.icon}
                                     </div>
-                                    <span className="text-sm text-gray-500 group-hover:text-white transition-colors">
+                                    <span className={`text-sm transition-colors ${activeTool === tool.name ? 'text-white' : 'text-gray-500 group-hover:text-white'}`}>
                                         {tool.name}
                                     </span>
                                 </div>
